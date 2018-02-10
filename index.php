@@ -1,7 +1,6 @@
 <?php include("inc/header.php"); ?>
 <main>
   <div class="main-content">
-    <section class="home">
       <div class="home-intro">
         <div class="home-intro-content">
           <div class="heading">
@@ -20,7 +19,6 @@
           </div>
         </div>
       </div>
-    </section>
   </div>
 </main>
 <?php include("inc/footer.php"); ?>
