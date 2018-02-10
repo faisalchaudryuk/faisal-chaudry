@@ -23,10 +23,6 @@ body {
   line-height: 1.2;
 }
 
-main {
-
-}
-
 p {
   line-height: 1.5;
 }
@@ -44,6 +40,10 @@ a:hover {
   border-bottom: 1px solid #007eff;
 }
 
+a:active {
+  color: #007eff;
+}
+
 ul {
   list-style: none;
   display: flex;
@@ -53,6 +53,29 @@ ul {
 
 li {
   padding: 10px 10px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px;
+}
+
+nav {
+  display: flex;
+}
+
+.main-nav a {
+  text-transform: lowercase;
+  font-weight: bold;
+  border: none;
+  margin: 0 8px;
+  padding: 0;
+}
+
+nav a:hover {
+  border: none;
 }
 
 .main-content {
@@ -120,20 +143,29 @@ li {
 }
 
 .about {
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
+  /* background-color: red; */
+}
+
+.biography {
+  max-width: 600px;
+  height: 100%;
+  /* background: green; */
 }
 
 footer {
   display: flex;
   background-color: #222;
-  color: #555;
-  padding: 15px 0;
+  color: #666;
   align-items: center;
   justify-content: center;
 }
 
 .footer-contents {
-
+  padding: 16px 0;
 }
 
 @media only screen and (max-width: 600px) {

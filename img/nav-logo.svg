@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>nav-logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M32,31.9998928 L0,31.9998928 L0,0 L32,0 L32,31.9998928 Z M3,28.928233 L3.07176704,3 L28.9281799,3 L28.9999469,3.07176704 L28.9999469,28.928233 L28.9281799,29 L3.07176704,29 L3,28.928233 Z M15.0217754,11.0932203 L21,11.0932203 L21,8 L12,8 L12,24 L15.0217754,24 L15.0217754,17.1737288 L19.9858701,17.1737288 L19.9858701,14.1864406 L15.0217754,14.1864406 L15.0217754,11.0932203 Z" id="nav-logo" fill="#333333"></path>
+    </g>
+</svg>
