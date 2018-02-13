@@ -1,3 +1,6 @@
+<?php
+$pageTitle = "Faisal Chaudry";
+?>
 <?php include("inc/header.php"); ?>
 <main>
   <div class="main-content">

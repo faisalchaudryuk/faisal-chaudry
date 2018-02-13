@@ -3,10 +3,13 @@ $page = null;
 if (isset($_GET["cat"])) {
   if ($_GET["cat"] == "design") {
     $page = "design";
+    $pageTitle = "Faisal | Design";
   } else if ($_GET["cat"] == "engineering") {
     $page = "engineering";
+    $pageTitle = "Faisal | Engineering";
   } elseif ($_GET["cat"] == "audio") {
     $page = "audio";
+    $pageTitle = "Faisal | Audio";
   }
 }
 function articleInfoHTML() {

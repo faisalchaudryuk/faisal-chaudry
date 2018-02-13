@@ -1,5 +1,6 @@
 <?php
 $page = "contact";
+$pageTitle = "Faisal | Contact";
 ?>
 <?php include("inc/header.php"); ?>
 <?php include("inc/nav.php"); ?>
