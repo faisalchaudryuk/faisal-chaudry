@@ -5,7 +5,7 @@
         <div class="home-intro-content">
           <div class="heading">
             <h1>the living portfolio of <span class="grey-text"><a href="about.php">faisal chaudry</a></span>.</h1>
-            <p>a record of my work in <a href="#">design</a>, <a href="#">engineering</a> &amp; <a href="#">audio</a>.</p>
+            <p>a record of my work in <a href="category.php">design</a>, <a href="#">engineering</a> &amp; <a href="#">audio</a>.</p>
           </div>
         </div>
       </div>
