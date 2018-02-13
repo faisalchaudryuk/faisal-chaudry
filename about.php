@@ -1,3 +1,6 @@
+<?php
+$page = "about";
+?>
 <?php include("inc/header.php"); ?>
 <?php include("inc/nav.php"); ?>
 <main>

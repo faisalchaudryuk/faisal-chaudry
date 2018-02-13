@@ -1,6 +1,14 @@
-<?php include("inc/header.php"); ?>
-<?php include("inc/nav.php"); ?>
 <?php
+$page = null;
+if (isset($_GET["cat"])) {
+  if ($_GET["cat"] == "design") {
+    $page = "design";
+  } else if ($_GET["cat"] == "engineering") {
+    $page = "engineering";
+  } elseif ($_GET["cat"] == "audio") {
+    $page = "audio";
+  }
+}
 function articleInfoHTML() {
     ?>
     <div class="article-info">
@@ -25,6 +33,8 @@ function articleCoverHTML(){
   <?php
 }
 ?>
+<?php include("inc/header.php"); ?>
+<?php include("inc/nav.php"); ?>
 <main>
   <div class="category-content">
     <header class="category-header">
