@@ -1,3 +1,4 @@
+<?php include("inc/data.php"); ?>
 <?php
 $page = null;
 if (isset($_GET["cat"])) {
@@ -12,26 +13,28 @@ if (isset($_GET["cat"])) {
     $pageTitle = "Faisal | Audio";
   }
 }
-function articleInfoHTML() {
+function articleInfoHTML($timeStamp, $title, $description, $link) {
     ?>
     <div class="article-info">
       <div class="article-info-wrapper">
         <div>
-          <p class="article-timestamp grey-text"><?php echo date('dS M Y'); ?></p>
-          <h1 class="article-title">article title</h1>
+          <p class="article-timestamp grey-text"><?php echo $timeStamp; ?></p>
+          <h1 class="article-title"><?php echo $title; ?></h1>
         </div>
         <div>
-          <p class="article-description">article prelude caption. This is a sentence thats constructed just to be long lol. article prelude caption. This is a sentence thats constructed just to be long lol.</p>
-          <a href="#" class="article-link">article link</a>
+          <p class="article-description"><?php echo $description; ?></p>
+          <a href="<?php echo $link; ?>" class="article-link"><?php echo $title; ?></a>
         </div>
       </div>
     </div>
     <?php
 }
-function articleCoverHTML(){
+function articleCoverHTML($img){
   ?>
-  <div class="article-cover">
-    <?php echo file_get_contents("img/faisal_logo_animated.svg"); ?>
+  <div class="article-cover-container">
+    <div class="article-cover">
+      <?php echo file_get_contents($img); ?>
+    </div>
   </div>
   <?php
 }
@@ -41,20 +44,21 @@ function articleCoverHTML(){
 <main>
   <div class="category-content">
     <header class="category-header">
-      <?php echo file_get_contents("img/nav-logo.svg"); ?>
-      <h1>category title</h1>
+      <h1><?php echo $page; ?></h1>
       <h3>category description sentence goes here.</h3>
     </header>
     <div class="articles">
-      <?php for($i=0; $i < 10; $i++){ ?>
-        <?php if ($i % 2 != 0): ?>
-          <?php articleInfoHTML(); ?>
-          <?php articleCoverHTML(); ?>
-        <?php else: ?>
-          <?php articleCoverHTML(); ?>
-          <?php articleInfoHTML(); ?>
-        <?php endif; ?>
-      <?php } ?>
+      <?php $i = 0; ?>
+      <?php foreach ($catalog as $id => $item) {
+        if ($i % 2 != 0):
+          articleInfoHTML($item["timestamp"], $item["title"], $item["description"], $item["link"]);
+          articleCoverHTML($item["img"]);
+        else:
+          articleCoverHTML($item["img"]);
+          articleInfoHTML($item["timestamp"], $item["title"], $item["description"], $item["link"]);
+        endif;
+        $i++;
+      }?>
     </div>
   </div>
 </main>

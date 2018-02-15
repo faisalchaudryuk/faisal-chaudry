@@ -188,10 +188,18 @@ footer {
   flex-wrap: wrap;
 }
 
-.article-cover {
-  background-image: linear-gradient(#d38312, #a83279);
+.article-cover-container {
+  display: flex;
   width: 50%;
   height: 95vh;
+}
+
+.article-cover {
+  display: flex;
+  background: red;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .article-info {
