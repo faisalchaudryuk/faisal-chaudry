@@ -192,6 +192,7 @@ footer {
   display: flex;
   width: 50%;
   height: 95vh;
+  position: relative;
 }
 
 .article-cover {
@@ -206,6 +207,7 @@ footer {
   background-image: linear-gradient(#fff, #fafafa);
   width: 50%;
   display: flex;
+  position: relative;
 }
 
 .article-info-wrapper {
@@ -234,6 +236,16 @@ footer {
   color: #007eff;
   font-weight: bold;
   text-transform: lowercase;
+}
+
+.fill-div-link {
+  position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-decoration: none; /* No underlines on the link */
+    z-index: 10; /* Places the link above everything else in the div */
 }
 
 @media only screen and (max-width: 600px) {

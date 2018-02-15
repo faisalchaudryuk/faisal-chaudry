@@ -16,16 +16,17 @@ if (isset($_GET["cat"])) {
 function articleInfoHTML($timeStamp, $title, $description, $link) {
     ?>
     <div class="article-info">
-      <div class="article-info-wrapper">
-        <div>
-          <p class="article-timestamp grey-text"><?php echo $timeStamp; ?></p>
-          <h1 class="article-title"><?php echo $title; ?></h1>
+      <a href="#" class="fill-div-link"></a>
+        <div class="article-info-wrapper">
+          <div>
+            <p class="article-timestamp grey-text"><?php echo $timeStamp; ?></p>
+            <h1 class="article-title"><?php echo $title; ?></h1>
+          </div>
+          <div>
+            <p class="article-description"><?php echo $description; ?></p>
+            <a href="<?php echo $link; ?>" class="article-link"><?php echo $title; ?></a>
+          </div>
         </div>
-        <div>
-          <p class="article-description"><?php echo $description; ?></p>
-          <a href="<?php echo $link; ?>" class="article-link"><?php echo $title; ?></a>
-        </div>
-      </div>
     </div>
     <?php
 }
