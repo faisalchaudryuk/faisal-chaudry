@@ -33,8 +33,7 @@ function get_article_info_HTML($timeStamp, $title, $description, $link) {
 function get_article_cover_HTML($img){
   ?>
   <div class="article-cover-container">
-    <div class="article-cover">
-      <?php echo file_get_contents($img); ?>
+    <div class="article-cover" style="background-image: url(<?php echo $img; ?>")>
     </div>
   </div>
   <?php
@@ -59,16 +58,9 @@ function get_article_cover_HTML($img){
     <div class="articles">
       <?php
       $section = array_category($catalog, $page);
-      $i = 0;
       foreach ($section as $key => $value) {
-        if ($i % 2 == 0):
           get_article_cover_HTML($value["img"]);
           get_article_info_HTML($value["timestamp"], $value["title"], $value["description"], $value["link"]);
-        else:
-          get_article_info_HTML($value["timestamp"], $value["title"], $value["description"], $value["link"]);
-          get_article_cover_HTML($value["img"]);
-        endif;
-        $i++;
       }?>
     </div>
   </div>

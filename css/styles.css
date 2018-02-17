@@ -176,9 +176,11 @@ footer {
 
 .category-header {
   width: 100%;
+  height: 260px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 32px 0;
 }
 
@@ -197,14 +199,19 @@ footer {
 .article-cover {
   display: flex;
   background: #a3a3a3;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 100%;
 }
 
 .article-info {
   background-image: linear-gradient(#fff, #fafafa);
   width: 50%;
+  height: 95vh;
   display: flex;
   position: relative;
 }
@@ -243,9 +250,13 @@ footer {
     height: 100%;
     top: 0;
     left: 0;
-    border-bottom: 0;
-    text-decoration: none; /* No underlines on the link */
+    text-decoration: none;
+    border: none;
     z-index: 10; /* Places the link above everything else in the div */
+}
+
+.fill-div-link:hover {
+  border: none;
 }
 
 @media only screen and (max-width: 600px) {
@@ -262,5 +273,15 @@ footer {
       width: 100%;
       height: 100vh;
       order: 1;
+    }
+    .articles {
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+    .article-cover-container {
+      width: 100%;
+    }
+    .article-info {
+      width: 100%;
     }
 }
