@@ -13,10 +13,10 @@ if (isset($_GET["cat"])) {
     $pageTitle = "Faisal | Audio";
   }
 }
-function articleInfoHTML($timeStamp, $title, $description, $link) {
+function get_article_info_HTML($timeStamp, $title, $description, $link) {
     ?>
     <div class="article-info">
-      <a href="#" class="fill-div-link"></a>
+      <a href="<?php echo $link ?>" class="fill-div-link"></a>
         <div class="article-info-wrapper">
           <div>
             <p class="article-timestamp grey-text"><?php echo $timeStamp; ?></p>
@@ -30,7 +30,7 @@ function articleInfoHTML($timeStamp, $title, $description, $link) {
     </div>
     <?php
 }
-function articleCoverHTML($img){
+function get_article_cover_HTML($img){
   ?>
   <div class="article-cover-container">
     <div class="article-cover">
@@ -40,23 +40,33 @@ function articleCoverHTML($img){
   <?php
 }
 ?>
+<?php function array_category($catalog, $category){
+  $output = [];
+  foreach ($catalog as $key => $value) {
+    if (strtolower($category) == strtolower($value["category"])) {
+      $output[] = $value;
+    }
+  }
+  return $output;
+}?>
 <?php include("inc/header.php"); ?>
 <?php include("inc/nav.php"); ?>
 <main>
   <div class="category-content">
     <header class="category-header">
       <h1><?php echo $page; ?></h1>
-      <h3>category description sentence goes here.</h3>
     </header>
     <div class="articles">
-      <?php $i = 0; ?>
-      <?php foreach ($catalog as $id => $item) {
-        if ($i % 2 != 0):
-          articleInfoHTML($item["timestamp"], $item["title"], $item["description"], $item["link"]);
-          articleCoverHTML($item["img"]);
+      <?php
+      $section = array_category($catalog, $page);
+      $i = 0;
+      foreach ($section as $key => $value) {
+        if ($i % 2 == 0):
+          get_article_cover_HTML($value["img"]);
+          get_article_info_HTML($value["timestamp"], $value["title"], $value["description"], $value["link"]);
         else:
-          articleCoverHTML($item["img"]);
-          articleInfoHTML($item["timestamp"], $item["title"], $item["description"], $item["link"]);
+          get_article_info_HTML($value["timestamp"], $value["title"], $value["description"], $value["link"]);
+          get_article_cover_HTML($value["img"]);
         endif;
         $i++;
       }?>
