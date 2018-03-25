@@ -13,27 +13,27 @@ if (isset($_GET["cat"])) {
     $pageTitle = "Faisal | Audio";
   }
 }
-function get_article_info_HTML($timeStamp, $title, $description, $link) {
+function get_article_info_HTML($date, $title, $description, $link, $tags) {
     ?>
     <div class="article-info">
       <a href="<?php echo $link ?>" class="fill-div-link"></a>
         <div class="article-info-wrapper">
           <div>
-            <p class="article-timestamp grey-text"><?php echo $timeStamp; ?></p>
+            <p class="article-date grey-text"><?php echo $date; ?></p>
             <h1 class="article-title"><?php echo $title; ?></h1>
           </div>
           <div>
             <p class="article-description"><?php echo $description; ?></p>
-            <a href="<?php echo $link; ?>" class="article-link"><?php echo $title; ?></a>
+            <?php for ($i=0; $i < count($tags) ; $i++) { echo "<p class='article-tag'>".$tags[$i]."</p>"; } ?>
           </div>
         </div>
     </div>
     <?php
 }
-function get_article_cover_HTML($img){
+function get_article_cover_HTML($cover){
   ?>
   <div class="article-cover-container">
-    <div class="article-cover" style="background-image: url(<?php echo $img; ?>")>
+    <div class="article-cover" style="background-image: url(<?php echo $cover; ?>")>
     </div>
   </div>
   <?php
@@ -59,8 +59,8 @@ function get_article_cover_HTML($img){
       <?php
       $section = array_category($catalog, $page);
       foreach ($section as $key => $value) {
-          get_article_cover_HTML($value["img"]);
-          get_article_info_HTML($value["timestamp"], $value["title"], $value["description"], $value["link"]);
+          get_article_cover_HTML($value["cover"]);
+          get_article_info_HTML($value["date"], $value["title"], $value["description"], $value["link"], $value["tags"]);
       }?>
     </div>
   </div>
